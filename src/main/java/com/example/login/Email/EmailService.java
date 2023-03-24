@@ -27,6 +27,7 @@ public class EmailService implements EmailSender{
             helper.setTo(to);
             helper.setSubject("Confirmation your email");
             helper.setFrom("rafiyiyassine@gmial.com");
+            mailSender.send(mimeMessage);
         }catch (MessagingException e){
             LOGGER.error("failed to send email", e);
             throw new IllegalStateException("failed to send email");
